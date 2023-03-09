@@ -43,10 +43,16 @@ describe("Application Form Component", () => {
         })
         expect(h2Element).toBeInTheDocument()
 
-        const nameElement = screen.getByRole('textbox', {
-            name: 'Name'
+        const nameElement = screen.getByLabelText('Name', {
+            name: 'Name',
+            selector: 'input'
         });
         expect(nameElement).toBeInTheDocument();
+        
+        const nameElement2 = screen.getByLabelText('Name', {
+            selector: 'textarea'
+        })
+        expect(nameElement2).toBeInTheDocument();
 
         const bioElement = screen.getByRole('textbox', {
             name: "Bio"
@@ -58,6 +64,9 @@ describe("Application Form Component", () => {
 
         const termsElement = screen.getByRole("checkbox");
         expect(termsElement).toBeInTheDocument();
+
+        const termsElement2 = screen.getByLabelText('I agree to the terms and conditions')
+        expect(termsElement2).toBeInTheDocument();
 
         const submitButtonElement = screen.getByRole("button");
         expect(submitButtonElement).toBeInTheDocument();

@@ -9,8 +9,15 @@ const ApplicationForm = () => {
                     <input type="text" id="name"/>
                 </div>
                 <div>
+                    <p>Following element is duplicate input field, for the purpose of demonstrating getByLabelText options</p>
+                    <label>
+                        Name 
+                        <textarea type="text"/>
+                    </label>
+                </div>
+                <div>
                     <label htmlFor="bio">Bio</label>
-                    <textarea type="text" id="bio" />
+                    <textarea type="text" id="bio" aria-le/>
                 </div>
                 <div>
                     <label htmlFor="job-location">Job location</label>
