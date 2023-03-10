@@ -3,6 +3,7 @@ const ApplicationForm = () => {
         <>
             <h1>Job Application Form</h1>
             <h2>Punjab, India</h2>
+            <p>All fields are mandatory</p>
             <form>
                 <div>
                     <label htmlFor="name">Name</label>

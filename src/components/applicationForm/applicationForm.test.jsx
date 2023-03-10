@@ -41,7 +41,10 @@ describe("Application Form Component", () => {
         const h2Element = screen.getByRole("heading", {
             level: 2
         })
-        expect(h2Element).toBeInTheDocument()
+        expect(h2Element).toBeInTheDocument();
+
+        const paragraphElement = screen.getByText("All fields are mandatory");
+        expect(paragraphElement).toBeInTheDocument();
 
         const nameElement = screen.getByLabelText('Name', {
             name: 'Name',
@@ -68,7 +71,7 @@ describe("Application Form Component", () => {
         const termsElement = screen.getByRole("checkbox");
         expect(termsElement).toBeInTheDocument();
 
-        const termsElement2 = screen.getByLabelText('I agree to the terms and conditions')
+        const termsElement2 = screen.getByLabelText('I agree to the terms and conditions');
         expect(termsElement2).toBeInTheDocument();
 
         const submitButtonElement = screen.getByRole("button");
