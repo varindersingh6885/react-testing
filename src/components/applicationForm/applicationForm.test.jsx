@@ -43,8 +43,43 @@ describe("Application Form Component", () => {
         })
         expect(h2Element).toBeInTheDocument();
 
-        const paragraphElement = screen.getByText("All fields are mandatory");
-        expect(paragraphElement).toBeInTheDocument();
+        // TextMatch - string
+
+        // 1. Full string match
+        const paragraphElement1 = screen.getByText("All fields are mandatory");
+        expect(paragraphElement1).toBeInTheDocument();
+
+        // 2. Substring match
+        const paragraphElement2 = screen.getByText("fields are", {
+            exact: false
+        });
+        expect(paragraphElement2).toBeInTheDocument();
+
+        // 3. Ignore case
+        const paragraphElement3 = screen.getByText("Fields ARE", {
+            exact: false
+        });
+        expect(paragraphElement3).toBeInTheDocument();
+
+
+        // TextMatch - regex
+        const paragraphElement4 = screen.getByText(/Fields ARE/i, {
+            exact: false
+        });
+        expect(paragraphElement4).toBeInTheDocument();
+
+
+        // TextMatch - custom function
+        const paragraphElement5 = screen.getByText(
+            (content) => {
+                return content.startsWith("All")
+            },
+            {
+                exact: false
+            }
+        );
+        expect(paragraphElement5).toBeInTheDocument();
+
 
         const closeElement = screen.getByTitle("Close");
         expect(closeElement).toBeInTheDocument();
