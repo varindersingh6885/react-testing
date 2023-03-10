@@ -46,6 +46,9 @@ describe("Application Form Component", () => {
         const paragraphElement = screen.getByText("All fields are mandatory");
         expect(paragraphElement).toBeInTheDocument();
 
+        const imgElement = screen.getByAltText("a person with a laptop");
+        expect(imgElement).toBeInTheDocument();
+
         const nameElement = screen.getByLabelText('Name', {
             name: 'Name',
             selector: 'input'
