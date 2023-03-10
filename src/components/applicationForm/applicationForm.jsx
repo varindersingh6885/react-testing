@@ -8,6 +8,7 @@ const ApplicationForm = () => {
                 <span title="Close">X</span>
             </div>
             <img src="https://via.placeholder.com/150" alt="a person with a laptop" />
+            <div data-testid="custom-element">Custom HTML element</div>
             <form>
                 <div>
                     <label htmlFor="name">Name</label>

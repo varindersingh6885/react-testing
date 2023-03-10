@@ -52,6 +52,9 @@ describe("Application Form Component", () => {
         const imgElement = screen.getByAltText("a person with a laptop");
         expect(imgElement).toBeInTheDocument();
 
+        const customElement = screen.getByTestId("custom-element");
+        expect(customElement).toBeInTheDocument();
+
         const nameElement = screen.getByLabelText('Name', {
             name: 'Name',
             selector: 'input'
