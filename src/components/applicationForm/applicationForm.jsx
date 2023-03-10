@@ -6,7 +6,7 @@ const ApplicationForm = () => {
             <form>
                 <div>
                     <label htmlFor="name">Name</label>
-                    <input type="text" id="name"/>
+                    <input type="text" id="name" placeholder="Username"/>
                 </div>
                 <div>
                     <p>Following element is duplicate input field, for the purpose of demonstrating getByLabelText options</p>
@@ -17,7 +17,7 @@ const ApplicationForm = () => {
                 </div>
                 <div>
                     <label htmlFor="bio">Bio</label>
-                    <textarea type="text" id="bio" aria-le/>
+                    <textarea type="text" id="bio"/>
                 </div>
                 <div>
                     <label htmlFor="job-location">Job location</label>
