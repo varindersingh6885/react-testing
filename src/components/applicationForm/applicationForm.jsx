@@ -7,18 +7,22 @@ const ApplicationForm = () => {
             <form>
                 <div>
                     <label htmlFor="name">Name</label>
-                    <input type="text" id="name" placeholder="Username"/>
+                    <input type="text"
+                        id="name" placeholder="Username"
+                        value="Varinder"
+                        onChange={() => { }}
+                    />
                 </div>
                 <div>
                     <p>Following element is duplicate input field, for the purpose of demonstrating getByLabelText options</p>
                     <label>
-                        Name 
-                        <textarea type="text"/>
+                        Name
+                        <textarea type="text" />
                     </label>
                 </div>
                 <div>
                     <label htmlFor="bio">Bio</label>
-                    <textarea type="text" id="bio"/>
+                    <textarea type="text" id="bio" />
                 </div>
                 <div>
                     <label htmlFor="job-location">Job location</label>
@@ -33,7 +37,7 @@ const ApplicationForm = () => {
                 </div>
                 <div>
                     <label>
-                        <input type="checkbox" id="terms" /> 
+                        <input type="checkbox" id="terms" />
                         I agree to the terms and conditions
                     </label>
                 </div>
