@@ -1,10 +1,13 @@
+import Skills from "./components/skills/skills"
+
 import './App.css';
-import ApplicationForm from './components/applicationForm/applicationForm';
 
 function App() {
+  const skills = ["HTML", "CSS", "JavaScript", "React"];
+
   return (
     <div className="App">
-      <ApplicationForm />
+      <Skills skills={skills}/>
     </div>
   );
 }
