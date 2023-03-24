@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, logRoles } from "@testing-library/react";
 
 import Skills from "./skills";
 
@@ -32,6 +32,22 @@ describe("Skills Component", () => {
             name : "Start Learning"
         })
         expect(startLearningButtonElement).not.toBeInTheDocument();
+    })
+
+    test("Start Learning button renders eventually", async () => {
+        const view = render(<Skills skills={skills} />);
+
+        logRoles(view.container); // prints the associated roles present in the DOM tree
+
+        screen.debug(); // debug() is used to print the DOM tree
+        const startLearningButtonElement = await screen.findByRole('button', {
+            name: "Start Learning"
+        }, {
+            timeout: 2000
+        })
+
+        screen.debug();
+        expect(startLearningButtonElement).toBeInTheDocument();
     })
 
     test("Check if Login button renders using manual query", () => {
