@@ -34,13 +34,9 @@ describe("Skills Component", () => {
         expect(startLearningButtonElement).not.toBeInTheDocument();
     })
 
-    test("Start Learning button is eventually rendered after 1010ms", async () => {
-        render(<Skills skills={skills} />);
-        const startLearningButtonElement = await screen.findByRole('button', {
-            name : "Start Learning"
-        }, {
-            timeout: 2000
-        })
-        expect(startLearningButtonElement).toBeInTheDocument()
+    test("Check if Login button renders using manual query", () => {
+        const {container} = render(<Skills skills={skills}/>);
+        const loginButtonElement = container.querySelector('#login-btn');
+        expect(loginButtonElement).toBeInTheDocument();
     })
 })
