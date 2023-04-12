@@ -1,13 +1,11 @@
-import Skills from "./components/skills/skills"
-
+import Counter from './components/counter/counter';
 import './App.css';
 
 function App() {
-  const skills = ["HTML", "CSS", "JavaScript", "React"];
 
   return (
     <div className="App">
-      <Skills skills={skills}/>
+      <Counter />
     </div>
   );
 }
